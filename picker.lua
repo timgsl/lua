@@ -9,15 +9,20 @@ local vga_files = {}
 -- for line in io.lines(".bookmarks") do
 --     table.insert(vga_files, line)
 -- end
+--
+local ttest = {}
 
 local test = vim.fn.glob(".bookmarks")
 if test ~= "" then
     -- print(vim.inspect("test is" .. test))
     -- print(vim.inspect("hello"))
-    print(vim.inspect("cwd"))
+
     for line in io.lines(".bookmarks") do
-        table.insert(vga_files, line)
+        local cwd = vim.fn.getcwd()
+        table.insert(vga_files, cwd .. line)
+        table.insert(ttest, {line, cwd .. line})
     end
+    print(vim.inspect(ttest))
 end
 
 -- our picker function: colors
@@ -26,16 +31,17 @@ local colors = function(opts)
     pickers.new(opts, {
         prompt_title = "colors",
         -- finder = finders.new_table {results = {"red", "green", "blue"}},
-        finder = finders.new_table {results = vga_files},
+        -- finder = finders.new_table {results = vga_files},
 
-        -- finder = finders.new_table {
-        --     results = {
-        --         {"redd", "#ff0000"}, {"green", "#00ff00"}, {"blue", "#0000ff"}
-        --     },
-        --     entry_maker = function(entry)
-        --         return {value = entry, display = entry[1], ordinal = entry[1]}
-        --     end
-        -- },
+        finder = finders.new_table {
+            results = {
+                {"dir/a", "/Users/tim/src/playground/lua/dir/a"},
+                {"green", "#00ff00"}, {"blue", "#0000ff"}
+            },
+            entry_maker = function(entry)
+                return {value = entry, display = entry[1], ordinal = entry[1]}
+            end
+        },
 
         sorter = conf.generic_sorter(opts)
 
