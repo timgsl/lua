@@ -1,0 +1,33 @@
+{
+  "projects": {
+    "/Users/tim/src/playground/lua": {
+      "mark": { "marks": [] },
+      "term": { "cmds": [] }
+    },
+    "/Users/tim/src/me/harpoon": {
+      "mark": {
+        "marks": [
+          { "col": 19, "row": 129, "filename": "lua/harpoon/init.lua" },
+          { "col": 32, "row": 63, "filename": "lua/harpoon/mark.lua" }
+        ]
+      },
+      "term": { "cmds": [] }
+    },
+    "/Users/tim/.local/share/nvim/site/pack/packer/start/lua-dev.nvim": {
+      "mark": { "marks": [] },
+      "term": { "cmds": [] }
+    },
+    "/Users/tim/dotfiles": {
+      "mark": { "marks": [{ "col": 0, "row": 1, "filename": "README.md" }] },
+      "term": { "cmds": [] }
+    }
+  },
+  "global_settings": {
+    "save_on_toggle": false,
+    "mark_branch": false,
+    "excluded_filetypes": ["harpoon"],
+    "enter_on_sendcmd": false,
+    "save_on_change": true,
+    "tmux_autoclose_windows": false
+  }
+}
