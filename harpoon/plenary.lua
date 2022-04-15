@@ -25,3 +25,26 @@ print(vim.inspect(config_path))
 --         projects[k] = nil
 --     end
 -- end
+--
+
+local function expand_dir(config)
+
+    local projects = config.projects or {}
+    for k in pairs(projects) do
+        print("this is " .. k)
+        local expanded_path = Path.new(k):expand()
+        print("this is expanded_path " .. expanded_path)
+        projects[expanded_path] = projects[k]
+        if expanded_path ~= k then
+            print("expanded path ~= k" .. "|k------" .. k .. "\n|exp-----"
+                      .. expanded_path)
+            print("\n")
+            projects[k] = nil
+        end
+    end
+
+    return config
+end
+
+local expanded = expand_dir(j1)
+print("expanded " .. vim.inspect(expanded))

@@ -1,6 +1,6 @@
 {
   "projects": {
-    "/Users/tim/src/playground/lua": {
+    "$XDG_CONFIG_HOME/src/playground/lua": {
       "mark": {
         "marks": []
       },
