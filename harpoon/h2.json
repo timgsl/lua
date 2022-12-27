@@ -1,23 +1,5 @@
 {
-  "projects": {
-    "/Users/tim/src/me/harpoon": {
-      "mark": {
-        "marks": [
-          {
-            "col": 19,
-            "row": 129,
-            "filename": "lua/harpoon/init.lua"
-          },
-          {
-            "col": 32,
-            "row": 63,
-            "filename": "lua/harpoon/mark.lua"
-          }
-        ]
-      },
-      "term": {
-        "cmds": []
-      }
-    }
+  "global_settings": {
+    "base_dirs": ["c"]
   }
 }

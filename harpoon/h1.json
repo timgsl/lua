@@ -1,12 +1,5 @@
 {
-  "projects": {
-    "$XDG_CONFIG_HOME/src/playground/lua": {
-      "mark": {
-        "marks": []
-      },
-      "term": {
-        "cmds": []
-      }
-    }
+  "global_settings": {
+    "base_dirs": ["c"]
   }
 }
